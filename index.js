@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+const product = require("./api/product");
 app.use(express.json());
 app.use(
     express.urlencoded({
@@ -8,8 +8,6 @@ app.use(
     })
 );
 
-app.get("/", (req, res) => {
-    res.send("Root API");
-});
+app.use("/api", product);
 
 app.listen(8000, () => console.log("PORT 8000"));
