@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const product = require("./api/product");
+require("dotenv").config();
 app.use(express.json());
 app.use(
     express.urlencoded({
